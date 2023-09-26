@@ -9,4 +9,10 @@ class Requirement extends Model
 {
     use HasFactory;
     protected $hidden = [];
+
+    protected $fillable = [
+        'name',
+        'id_status_requirements'
+
+    ];
 }
