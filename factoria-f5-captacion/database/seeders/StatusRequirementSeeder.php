@@ -52,5 +52,8 @@ class StatusRequirementSeeder extends Seeder
         StatusRequirement::create([
             'name'=>'Faltan enlaces'
         ]);
+        StatusRequirement::create([
+            'name'=>'Convocadx a Jornada de Selección'
+        ]);
     }
 }
