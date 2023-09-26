@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('person__requirements', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger('id_person');
+            $table->bigInteger('id_requirement');
             $table->timestamps();
         });
     }

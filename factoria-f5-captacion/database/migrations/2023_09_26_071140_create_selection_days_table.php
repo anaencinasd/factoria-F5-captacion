@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('selection_days', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('school');
+            $table->date('date');
             $table->timestamps();
         });
     }
