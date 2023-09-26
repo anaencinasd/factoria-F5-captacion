@@ -9,4 +9,10 @@ class StatusRequirement extends Model
 {
     use HasFactory;
     protected $hidden = [];
+
+    protected $fillable = [
+        'name',
+        
+       
+    ];
 }
