@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Person_Requirement extends Model
 {
     use HasFactory;
+    protected $hidden = [];
 }

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class StatusRequirement extends Model
 {
     use HasFactory;
+    protected $hidden = [];
 }
