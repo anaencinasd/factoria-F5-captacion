@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RequirementSeeder::class,
+            StatusRequirementSeeder::class,
+        
         ]);
     }
 }
