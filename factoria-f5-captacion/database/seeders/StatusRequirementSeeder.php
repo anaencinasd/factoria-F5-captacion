@@ -8,9 +8,7 @@ use App\Models\StatusRequirement;
 
 class StatusRequirementSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+   
     public function run(): void
     {
         StatusRequirement::create([
