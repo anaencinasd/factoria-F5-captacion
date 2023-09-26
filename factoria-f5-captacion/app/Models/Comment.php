@@ -11,4 +11,13 @@ class Comment extends Model
 
     protected $hidden = []
     ;
+
+    protected $fillable = [
+        'comment',
+        'id_person',
+        'id_user'
+       
+    ];
+
+
 }
