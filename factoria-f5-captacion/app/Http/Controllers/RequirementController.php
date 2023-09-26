@@ -4,62 +4,58 @@ namespace App\Http\Controllers;
 
 use App\Models\Requirement;
 use Illuminate\Http\Request;
+use App\Http\Requests\RequirementRequest;
+use Illuminate\Http\JsonResponse;
 
 class RequirementController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    
+    public function index():JsonResponse
     {
-        //
+        $requirements = Requirement::all();
+        return response()->json(['data'=>$requirements], 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    
+    
+    
+    public function store(RequirementRequest $request):JsonResponse
     {
-        //
+        $requirement=Requirement::create($request->all());
+
+        return response()->json([
+            'success'=>true,
+            'data'=>$requirement], 201);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    
+    public function show($id):JsonResponse
     {
-        //
+        $requirement = Requirement::find($id);
+        return response ()->json($requirement, 200);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Requirement $requirement)
+    
+    public function update(RequirementRequest $request, $id):JsonResponse
     {
-        //
+        $requirement = Requirement::find($id);
+        $requirement->requirement=$request->requirement;
+        $requirement->name=$request->name;
+        $requirement->id_status_requirement=$request->id_status_requirement;
+        $requirement ->save();
+
+        return response()->json([
+            'success'=>true
+            ], 200);
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Requirement $requirement)
+    
+    public function destroy($id):JsonResponse
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Requirement $requirement)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Requirement $requirement)
-    {
-        //
+        Requirement::find($id)->delete();
+        return response()->json([
+            'success'=>true
+        ], 200);
     }
 }

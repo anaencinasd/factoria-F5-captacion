@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('requirements', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->bigInteger('id_status_requirements');
+            $table->bigInteger('id_status_requirements')->default(1);
             $table->timestamps();
         });
     }
