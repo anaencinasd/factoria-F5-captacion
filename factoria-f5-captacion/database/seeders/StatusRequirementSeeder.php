@@ -14,46 +14,19 @@ class StatusRequirementSeeder extends Seeder
     public function run(): void
     {
         StatusRequirement::create([
-            'name'=>'En seguimiento'
+            'name'=>'Realizado'
         ]);
 
         StatusRequirement::create([
-            'name'=>'Segundo formulario completado'
+            'name'=>'No realizado'
         ]);
 
         StatusRequirement::create([
-            'name'=>'Sin respuesta'
+            'name'=>'Un aviso'
         ]);
 
         StatusRequirement::create([
-            'name'=>'Fuera (duplicado, baja, prueba, error, etc'
-        ]);
-        StatusRequirement::create([
-            'name'=>'Confirma asistencia'
-        ]);
-        StatusRequirement::create([
-            'name'=>'Asiste'
-        ]);
-        StatusRequirement::create([
-            'name'=>'Ha participado'
-        ]);
-        StatusRequirement::create([
-            'name'=>'No ha participado'
-        ]);
-        StatusRequirement::create([
-            'name'=>'Completos'
-        ]);
-        StatusRequirement::create([
-            'name'=>'No acabados'
-        ]);
-        StatusRequirement::create([
-            'name'=>'Sin comenzar'
-        ]);
-        StatusRequirement::create([
-            'name'=>'Faltan enlaces'
-        ]);
-        StatusRequirement::create([
-            'name'=>'Convocado/a a Jornada de Selección'
+            'name'=>'Dos avisos'
         ]);
     }
 }
