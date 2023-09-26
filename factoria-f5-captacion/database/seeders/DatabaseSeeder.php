@@ -13,8 +13,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+<<<<<<< HEAD
             StatusRequirementSeeder::class,
         
+=======
+            RequirementSeeder::class,
+>>>>>>> 03f7556 (RequirementSeeder done)
         ]);
     }
 }
