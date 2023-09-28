@@ -15,10 +15,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->bigInteger('id_status_requirement')->default(1);
-<<<<<<< HEAD
-=======
             $table->string('description');
->>>>>>> fc02885 (bugs requirements subsanate + update 'description')
             $table->timestamps();
         });
     }
