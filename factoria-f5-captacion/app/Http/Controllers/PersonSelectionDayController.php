@@ -4,12 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Person_SelectionDay;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class PersonSelectionDayController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function getPersonsInSelectionDay($id)
+    {
+        $response = Http::get('http://127.0.0.1:8000/api/person/');
+
+        if($response ->successfull()){
+            $people = $response->json();
+        }else{
+            return response ()->json(['Error al obtener las personas participantes'], 500);
+        }
+    }
+
+
+
     public function index()
     {
         //

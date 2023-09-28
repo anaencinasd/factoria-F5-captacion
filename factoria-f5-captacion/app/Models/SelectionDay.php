@@ -9,4 +9,11 @@ class SelectionDay extends Model
 {
     use HasFactory;
     protected $hidden = [];
+
+    protected $fillable = [
+        'school',
+        'date',
+        
+       
+    ];
 }

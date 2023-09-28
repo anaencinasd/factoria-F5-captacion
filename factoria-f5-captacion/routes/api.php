@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PersonSelectionDayController;
 use App\Http\Controllers\RequirementController;
 use App\Models\SelectionDay;
 use App\Models\StatusRequirement;
@@ -26,3 +27,7 @@ Route::resource('/comment', CommentController::class);
 Route::resource('/requirement', RequirementController::class);
 Route::resource('/selectionDay', SelectionDay::class);
 Route::resource('/statusRequirement', StatusRequirement::class);
+
+//Rutas SelectionDay_person
+
+Route::get('/getPersonsInSelectionDay/{selectionDay}', [PersonSelectionDayController::class, 'getPersonsInSelectionDay']);
