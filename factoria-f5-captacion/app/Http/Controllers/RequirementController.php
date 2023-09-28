@@ -42,6 +42,7 @@ class RequirementController extends Controller
         $requirement->requirement=$request->requirement;
         $requirement->name=$request->name;
         $requirement->id_status_requirement=$request->id_status_requirement;
+        $requirement->description=$request->description;
         $requirement ->save();
 
         return response()->json([
