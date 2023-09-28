@@ -12,7 +12,12 @@ class Requirement extends Model
 
     protected $fillable = [
         'name',
+<<<<<<< HEAD
         'id_status_requirement'
+=======
+        'id_status_requirement',
+        'description'
+>>>>>>> fc02885 (bugs requirements subsanate + update 'description')
 
     ];
 }
