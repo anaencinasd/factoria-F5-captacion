@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('requirements', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+<<<<<<< HEAD
             $table->bigInteger('id_status_requirement')->default(1);
+=======
+            $table->bigInteger('id_status_requirements')->default(2);
+>>>>>>> f48ae6b7f37939f49fa14c594aaf2df1299071d7
             $table->timestamps();
         });
     }
