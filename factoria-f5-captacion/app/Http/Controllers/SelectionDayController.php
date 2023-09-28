@@ -28,7 +28,6 @@ class SelectionDayController extends Controller
         
     }
 
-    
     public function show($id):JsonResponse
     {
         $selectionDay = SelectionDay::find($id);
@@ -48,7 +47,6 @@ class SelectionDayController extends Controller
         ], 200);
     }
 
-    
     public function destroy($id):JsonResponse
     {
         SelectionDay::find($id)->delete();
