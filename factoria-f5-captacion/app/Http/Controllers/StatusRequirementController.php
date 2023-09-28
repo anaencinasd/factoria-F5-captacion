@@ -28,7 +28,7 @@ class StatusRequirementController extends Controller
     
     public function show(string $id)
     {
-        $statusRequirement = StatusRequirement::fin($id);
+        $statusRequirement = StatusRequirement::find($id);
         return response()->json($statusRequirement, 200);
     }
 
