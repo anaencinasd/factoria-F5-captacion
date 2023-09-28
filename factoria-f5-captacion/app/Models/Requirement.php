@@ -12,7 +12,8 @@ class Requirement extends Model
 
     protected $fillable = [
         'name',
-        'id_status_requirement'
+        'id_status_requirement',
+        'description'
 
     ];
 }
