@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Http;
 
 class PersonSelectionDayController extends Controller
 {
-    public function getPersonsInSelectionDay($id)
+    public function getPersonInSelectionDay($id)
     {
-        $response = Http::get('http://127.0.0.1:8000/api/person/');
+        $response = Http::get('http://127.0.0.1:8002/api/person/');
 
         if($response ->successfull()){
             $people = $response->json();
@@ -18,6 +18,41 @@ class PersonSelectionDayController extends Controller
             return response ()->json(['Error al obtener las personas participantes'], 500);
         }
     }
+
+    public function addPersonToSelectionDay()
+    {
+        
+        $response = Http::get('http://127.0.0.1:8002/api/person/1');
+    
+    
+        if ($response->successful()) {
+            $personData = $response->json();
+    
+            if (!empty($personData) && isset($personData['id'])) {
+                $personId = $personData['id'];
+    
+                
+                Person_SelectionDay::create([
+                    'id_person' => $personId,
+                    'id_selection_day' => 1, 
+                    'comments' => '',
+                    'turn' => '',
+                    'school' => '',
+                    'decission' => '', 
+                ]);
+    
+                return response()->json(['message' => 'Persona agregada a la jornada de selección con éxito'], 200);
+            } else {
+                return response()->json(['error' => 'No se encontró la persona con id=1 en la otra API'], 404);
+            }
+        } else {
+            return response()->json(['error' => 'Error al obtener la persona desde la otra API'], 500);
+        }
+    }
+
+
+
+
 
 
 

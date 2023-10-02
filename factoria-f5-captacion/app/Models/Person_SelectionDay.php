@@ -11,6 +11,19 @@ class Person_SelectionDay extends Model
     use HasFactory;
     protected $hidden = [];
 
+    protected $fillable = [
+        'id_person', 
+        'id_selection_day',
+        'comments',
+        'turn',
+        'school',
+        'decission',
+    ];
+
+    
+
+
+
     public function person()
     {
         return $this->belongsToMany(Person::class, 'person__selection_days', 'id_person', 'id_selectionDay')
