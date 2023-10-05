@@ -15,6 +15,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('school');
             $table->date('date');
+            $table->string('link');
             $table->timestamps();
         });
     }

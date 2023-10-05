@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\SelectionDay;
 use Illuminate\Http\Request;
+use App\Models\SelectionDay;
+
 use App\Http\Requests\SelectionDayRequest;
-use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class SelectionDayController extends Controller
 {

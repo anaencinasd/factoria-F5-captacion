@@ -3,8 +3,8 @@
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PersonSelectionDayController;
 use App\Http\Controllers\RequirementController;
-use App\Models\SelectionDay;
-use App\Models\StatusRequirement;
+use App\Http\Controllers\SelectionDayController;
+use App\Http\Controllers\StatusRequirementController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +25,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('/comment', CommentController::class);
 Route::resource('/requirement', RequirementController::class);
-Route::resource('/selectionDay', SelectionDay::class);
-Route::resource('/statusRequirement', StatusRequirement::class);
+Route::resource('/selectionDay', SelectionDayController::class);
+Route::resource('/statusRequirement', StatusRequirementController::class);
 
 //Rutas SelectionDay_person
 
