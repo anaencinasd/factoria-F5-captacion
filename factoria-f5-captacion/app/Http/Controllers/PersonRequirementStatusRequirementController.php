@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Person_Requirement;
+use App\Models\Person_Requirement_StatusRequirement;
 use Illuminate\Http\Request;
 
-class PersonRequirementController extends Controller
+class PersonRequirementStatusRequirementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class PersonRequirementController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Person_Requirement $person_Requirement)
+    public function show(Person_Requirement_StatusRequirement $Person_Requirement_StatusRequirement)
     {
         //
     }
@@ -42,7 +42,7 @@ class PersonRequirementController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Person_Requirement $person_Requirement)
+    public function edit(Person_Requirement_StatusRequirement $Person_Requirement_StatusRequirement)
     {
         //
     }
@@ -50,7 +50,7 @@ class PersonRequirementController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Person_Requirement $person_Requirement)
+    public function update(Request $request, Person_Requirement_StatusRequirement $Person_Requirement_StatusRequirement)
     {
         //
     }
@@ -58,7 +58,7 @@ class PersonRequirementController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Person_Requirement $person_Requirement)
+    public function destroy(Person_Requirement_StatusRequirement $Person_Requirement_StatusRequirement)
     {
         //
     }
