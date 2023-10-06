@@ -17,6 +17,7 @@ return new class extends Migration
             $table->date('date');
             $table->string('link');
             $table->text('comment');
+            $table->string('document');
             $table->timestamps();
         });
     }

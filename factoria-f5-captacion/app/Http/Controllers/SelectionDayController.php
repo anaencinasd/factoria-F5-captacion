@@ -42,6 +42,7 @@ class SelectionDayController extends Controller
         $selectionDay->school=$request->school;
         $selectionDay->date=$request->date;
         $selectionDay->link=$request->link;
+        $selectionDay->document=$request->document;
         $selectionDay->comment=$request->comment;
         $selectionDay->save();
 

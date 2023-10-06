@@ -25,7 +25,8 @@ class SelectionDayRequest extends FormRequest
             'school'=>'required',
             'date'=> 'required',
             'link'=>'required',
-            'comment'=> 'required'
+            'comment'=> 'required',
+            'document'=> 'required',
         ];
     }
 }
