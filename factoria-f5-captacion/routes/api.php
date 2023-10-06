@@ -26,9 +26,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('/comment', CommentController::class);
 Route::resource('/requirement', RequirementController::class);
 Route::resource('/selectionDay', SelectionDayController::class);
-Route::resource('/statusRequirement', StatusRequirement::class);
+Route::resource('/statusRequirement', StatusRequirementController::class);
 
 //Rutas SelectionDay_person
 
-Route::get('/getPersonInSelectionDay/{selectionDay}', [PersonSelectionDayController::class, 'getPersonInSelectionDay']);
+Route::get('/getPeopleInSelectionDay/{selectionDay}/people', [PersonSelectionDayController::class, 'getPeopleInSelectionDay']);
 Route::post('/addPersonToSelectionDay/{selectionDay}', [PersonSelectionDayController::class, 'addPersonToSelectionDay']);
+
+
+

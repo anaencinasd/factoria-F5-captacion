@@ -8,22 +8,33 @@ use Illuminate\Support\Facades\Http;
 
 class PersonSelectionDayController extends Controller
 {
-    public function getPersonInSelectionDay($id)
-    {
-        $response = Http::get('http://127.0.0.1:8002/api/person/');
-
-        if($response ->successfull()){
-            $people = $response->json();
-        }else{
-            return response ()->json(['Error al obtener las personas participantes'], 500);
-        }
-    }
-
-    public function addPersonToSelectionDay()
-    {
+    // public function getPeopleInSelectionDay($selectionDayId)
+    // {
         
-        $response = Http::get('http://127.0.0.1:8002/api/person/1');
-    
+    //     $response = Http::get("http://127.0.0.1:8002/api/person-in-selection-day/{$selectionDayId}");
+
+    //     if ($response->successful()) {
+    //         $people = $response->json();
+
+    //         return response()->json(['data' => $people], 200);
+    //     } else {
+    //         return response()->json(['error' => 'Error al obtener las personas participantes'], 500);
+    //     }
+    // }
+
+    public function getPeopleInSelectionDay($selectionDay)
+{
+    $people = Person_SelectionDay::where('id_selection_day', $selectionDay)->get();
+    if ($people->count() > 0) {
+        return response()->json(['data' => $people], 200);
+    } else {
+        return response()->json(['error' => 'No se encontraron personas en la jornada de selección'], 404);
+    }
+}
+
+    public function addPersonToSelectionDay(Request $request, $personId)
+    {
+        $response = Http::get("http://127.0.0.1:8002/api/person/{$personId}");
     
         if ($response->successful()) {
             $personData = $response->json();
@@ -31,27 +42,23 @@ class PersonSelectionDayController extends Controller
             if (!empty($personData) && isset($personData['id'])) {
                 $personId = $personData['id'];
     
-                
                 Person_SelectionDay::create([
                     'id_person' => $personId,
-                    'id_selection_day' => 1, 
-                    'comments' => '',
-                    'turn' => '',
-                    'school' => '',
-                    'decission' => '', 
+                    'id_selection_day' => 1,  
+                    'comments' => $request->input('comments'),
+                    'turn' => $request->input('turn'),
+                    'school' => $request->input('school'),
+                    'decission' => $request->input('decission'), 
                 ]);
     
                 return response()->json(['message' => 'Persona agregada a la jornada de selección con éxito'], 200);
             } else {
-                return response()->json(['error' => 'No se encontró la persona con id=1 en la otra API'], 404);
+                return response()->json(['error' => 'No se encontró la persona en la otra API'], 404);
             }
         } else {
             return response()->json(['error' => 'Error al obtener la persona desde la otra API'], 500);
         }
     }
-
-
-
 
 
 

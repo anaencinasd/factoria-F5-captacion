@@ -23,7 +23,8 @@ class SelectionDayRequest extends FormRequest
     {
         return [
             'school'=>'required',
-            'date'=> 'required'
+            'date'=> 'required',
+            'link'=>'required'
         ];
     }
 }
