@@ -41,7 +41,6 @@ class RequirementController extends Controller
         $requirement = Requirement::find($id);
         $requirement->requirement=$request->requirement;
         $requirement->name=$request->name;
-        $requirement->id_status_requirement=$request->id_status_requirement;
         $requirement->description=$request->description;
         $requirement ->save();
 

@@ -23,7 +23,6 @@ class RequirementRequest extends FormRequest
     {
         return [
             'name'=>'required|string',
-            'id_status_requirement'=>'required|numeric',
             'description'=>'required|string',
 
         
