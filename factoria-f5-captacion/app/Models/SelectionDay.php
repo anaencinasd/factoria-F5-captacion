@@ -10,4 +10,13 @@ class SelectionDay extends Model
     use HasFactory;
     protected $hidden = [];
     protected $fillable = [ 'school', 'date', 'link'];
+
+    public function people()
+{
+    return $this->belongsToMany(Person::class, 'person_selection_day', 'id_selection_day', 'id_person')
+        ->withPivot(['school', 'comments', 'turn', 'decision'])
+        ->withTimestamps();
 }
+}
+
+

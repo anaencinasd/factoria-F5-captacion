@@ -28,11 +28,7 @@ class StatusRequirementController extends Controller
     
     public function show(string $id)
     {
-<<<<<<< HEAD
         $statusRequirement = StatusRequirement::find($id);
-=======
-        $statusRequirement = StatusRequirement::fin($id);
->>>>>>> f48ae6b7f37939f49fa14c594aaf2df1299071d7
         return response()->json($statusRequirement, 200);
     }
 
