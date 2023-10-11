@@ -40,6 +40,7 @@ class CommentController extends Controller
     {
         $comment = Comment::find($id);
         $comment->comment=$request->comment;
+        $comment->stage=$request->stage;
         $comment->id_user=$request->id_user;
         $comment->id_person=$request->id_person;
         $comment->save();
