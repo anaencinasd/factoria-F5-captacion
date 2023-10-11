@@ -24,7 +24,9 @@ class SelectionDayRequest extends FormRequest
         return [
             'school'=>'required',
             'date'=> 'required',
-            'link'=>'required'
+            'link'=>'required',
+            'comment'=> 'required',
+            'document'=> 'required',
         ];
     }
 }

@@ -9,7 +9,7 @@ class SelectionDay extends Model
 {
     use HasFactory;
     protected $hidden = [];
-    protected $fillable = [ 'school', 'date', 'link'];
+    protected $fillable = [ 'school', 'date', 'link', 'comment', 'document'];
 
     public function people()
 {

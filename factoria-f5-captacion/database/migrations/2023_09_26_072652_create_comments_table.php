@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->text('comment');
+            $table->text('stage');
             $table->bigInteger('id_user');
             $table->bigInteger('id_person');
             $table->timestamps();
