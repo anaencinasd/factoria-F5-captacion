@@ -23,6 +23,7 @@ class CommentRequest extends FormRequest
     {
         return [
             'comment'=>'required',
+            'stage' => 'required',
             'id_user'=>'required|numeric',
             'id_person'=>'required|numeric',
             
