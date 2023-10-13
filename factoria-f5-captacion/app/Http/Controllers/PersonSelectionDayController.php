@@ -33,7 +33,9 @@ class PersonSelectionDayController extends Controller
 }
 
     public function addPersonToSelectionDay(Request $request, $personId)
+    
     {
+        $idSelectionDay = $request->input('id_selection_day');
         $response = Http::get("http://127.0.0.1:8002/api/person/{$personId}");
     
         if ($response->successful()) {
@@ -44,11 +46,11 @@ class PersonSelectionDayController extends Controller
     
                 Person_SelectionDay::create([
                     'id_person' => $personId,
-                    'id_selection_day' => 1,  
+                    'id_selection_day' => $idSelectionDay,  
                     'comments' => $request->input('comments'),
                     'turn' => $request->input('turn'),
                     'school' => $request->input('school'),
-                    'decission' => $request->input('decission'), 
+                    'id_status' => $personData['id_status'] 
                 ]);
     
                 return response()->json(['message' => 'Persona agregada a la jornada de selección con éxito'], 200);
