@@ -39,7 +39,6 @@ class RequirementController extends Controller
     public function update(RequirementRequest $request, $id):JsonResponse
     {
         $requirement = Requirement::find($id);
-        $requirement->requirement=$request->requirement;
         $requirement->name=$request->name;
         $requirement->description=$request->description;
         $requirement ->save();

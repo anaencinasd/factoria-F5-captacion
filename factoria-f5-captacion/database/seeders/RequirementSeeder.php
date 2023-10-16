@@ -14,19 +14,22 @@ class RequirementSeeder extends Seeder
     public function run(): void
     {
         Requirement::create([
-            'name'=>'jpa'
+            'name'=>'JPA'
         ]);
 
         Requirement::create([
-            'name'=>'ric'
+            'name'=>'RIC'
         ]);
 
         Requirement::create([
-            'name'=>'talleres'
+            'name'=>'Talleres F5'
         ]);
 
         Requirement::create([
-            'name'=>'ejercicios'
+            'name'=>'Ejercicios'
+        ]);
+        Requirement::create([
+            'name'=>'Segundo formulario'
         ]);
     }
 }
