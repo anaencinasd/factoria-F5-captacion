@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\StatusRequirement;
 use App\Http\Requests\StatusRequirementRequest;
 
 class StatusRequirementController extends Controller
 {
-    public function index()
+    public function index():JsonResponse
     {
         $statusRequirement = StatusRequirement::all();
         return response()->json(
@@ -16,9 +16,9 @@ class StatusRequirementController extends Controller
     }
 
 
-    public function store(StatusRequirementRequest $request)
+    public function store(StatusRequirementRequest $request):JsonResponse
     {
-        $statusRequirement=StatusRequirement::create($request->all);
+        $statusRequirement=StatusRequirement::create($request->all());
         return response()->json([
             'data'=>$statusRequirement,
             'success'=>true
@@ -26,27 +26,26 @@ class StatusRequirementController extends Controller
     }
 
     
-    public function show(string $id)
+    public function show(string $id):JsonResponse
     {
         $statusRequirement = StatusRequirement::find($id);
         return response()->json($statusRequirement, 200);
     }
 
     
-    public function update(StatusRequirementRequest $request, string $id)
+    public function update(StatusRequirementRequest $request, string $id):JsonResponse
     {
         $statusRequirement = StatusRequirement::find($id);
-        $statusRequirement->name = $request->name;
+        $requirement->name=$request->name;
         $statusRequirement -> save();
-
         return response()->json([
-            'data'=>$statusRequirement,
+            //'data'=>$statusRequirement,
             'success'=>true
         ], 200);
 
     }
 
-    public function destroy(string $id)
+    public function destroy(string $id):JsonResponse
     {
         StatusRequirement::find($id)->delete();
 
