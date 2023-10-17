@@ -60,26 +60,76 @@ class PersonRequirementStatusRequirementController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Person_Requirement_StatusRequirement $Person_Requirement_StatusRequirement)
+    public function show($id_person, $id_requirement)
     {
-        //
+        $data = Person_Requirement_StatusRequirement::where('id_person', $id_person)
+            ->where('id_requirement', $id_requirement)
+            ->first();
+    
+        if (!$data) {
+            return response()->json(['message' => 'Registro no encontrado'], 404);
+        }
+    
+        return response()->json($data, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Person_Requirement_StatusRequirement $Person_Requirement_StatusRequirement)
-    {
-        //
+    
+    // public function update(PersonRequirementStatusRequirementRequest $request, $id_person, $id_requirement )
+    // {
+    //     $data = Person_Requirement_StatusRequirement::where('id_person', $id_person)
+    //     ->where('id_requirement', $id_requirement)
+    //     ->first();
+
+    //     // $data->id_person=$request->id_person;
+    //     // $data->id_requirement=$request->id_requirement;
+    //     $data->id_statusRequirement=$request->id_statusRequirement;
+        
+    //     $data ->save();
+
+    //     return response()->json([
+    //         'success'=>true,
+    //         'data'=>$data
+    //         ], 200);
+
+
+    // }
+    
+    public function updateStatus(Request $request, $id_person, $id_requirement)
+{
+    
+    $personResponse = Http::get('http://127.0.0.1:8002/api/person/' . $id_person);
+
+    if (!$personResponse->successful()) {
+        return response()->json([
+            'success' => false,
+            'message' => 'No se pudo obtener el id_person de la API externa',
+        ], 500);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Person_Requirement_StatusRequirement $Person_Requirement_StatusRequirement)
-    {
-        //
+    $personData = $personResponse->json();
+    $id_person = $personData['id']; 
+
+    
+    $data = Person_Requirement_StatusRequirement::where('id_person', $id_person)
+        ->where('id_requirement', $id_requirement)
+        ->first();
+
+    if (!$data) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Registro no encontrado',
+        ], 404);
     }
+
+    $data->id_statusRequirement = $request->input('id_statusRequirement');
+    $data->save();
+
+    return response()->json([
+        'success' => true,
+        'data' => $data,
+    ], 200);
+}
+
 
     /**
      * Remove the specified resource from storage.

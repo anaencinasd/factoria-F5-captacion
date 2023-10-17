@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class Person_Requirement_SatusRequirementSeeder extends Seeder
+class Person_Requirement_StatusRequirementSeeder extends Seeder
 {
     /**
      * Run the database seeds.

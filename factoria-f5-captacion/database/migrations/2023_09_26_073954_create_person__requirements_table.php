@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('person__requirement_statusRequirements', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->bigInteger('id_person');
             $table->bigInteger('id_requirement');
             $table->bigInteger('id_statusRequirement');

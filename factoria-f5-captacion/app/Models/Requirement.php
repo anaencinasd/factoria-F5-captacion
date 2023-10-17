@@ -15,4 +15,10 @@ class Requirement extends Model
         'description'
 
     ];
+
+    public function statusRequirement()
+    {
+        return $this->belongsToMany(Person::class,'person__requirement_statusrequirements', 'id_person', 'id_requirement', 'id_statusRequirement')
+        ->withTimestamps();;
+    }
 }

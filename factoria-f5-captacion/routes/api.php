@@ -36,7 +36,10 @@ Route::post('/addPersonToSelectionDay/{selectionDay}', [PersonSelectionDayContro
 
 //Rutas Person_Requirement_StatusRequirement
 
-Route::resource('/personRequirements', PersonRequirementStatusRequirementController::class);
+Route::get ('/personRequirements', [PersonRequirementStatusRequirementController::class, 'index']);
+Route::post('/personRequirements', [PersonRequirementStatusRequirementController::class, 'store']);
+Route::put('/personRequirements/{id_person}/{id_requirement}', [PersonRequirementStatusRequirementController::class, 'updateStatus']);
+Route::get('/personRequirements/{id_person}/{id_requirement}', [PersonRequirementStatusRequirementController::class, 'show']);
 
 
 

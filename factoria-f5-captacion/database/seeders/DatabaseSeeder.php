@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             RequirementSeeder::class,
             StatusRequirementSeeder::class,
             CommentSeeder::class,
-            Person_Requirement_SatusRequirementSeeder::class,
+            Person_Requirement_StatusRequirementSeeder::class,
             Person_SelectionDaySeeder::class,
             SelectionDaySeeder::class,   
         ]);
