@@ -24,7 +24,7 @@ class StatusRequirementSeeder extends Seeder
         ]);
 
         StatusRequirement::create([
-            'name'=>'Fuera (duplicado, baja, prueba, error, etc'
+            'name'=>'Fuera (duplicado, baja, prueba, error, etc)'
         ]);
         StatusRequirement::create([
             'name'=>'Confirma asistencia'
@@ -51,7 +51,7 @@ class StatusRequirementSeeder extends Seeder
             'name'=>'Faltan enlaces'
         ]);
         StatusRequirement::create([
-            'name'=>'Convocado/a a Jornada de Selección'
+            'name'=>'Convocado/a'
         ]);
     }
 }

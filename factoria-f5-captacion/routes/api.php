@@ -5,6 +5,7 @@ use App\Http\Controllers\PersonSelectionDayController;
 use App\Http\Controllers\RequirementController;
 use App\Http\Controllers\SelectionDayController;
 use App\Http\Controllers\StatusRequirementController;
+use App\Http\Controllers\PersonRequirementStatusRequirementController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,10 @@ Route::resource('/statusRequirement', StatusRequirementController::class);
 
 Route::get('/getPeopleInSelectionDay/{selectionDay}/people', [PersonSelectionDayController::class, 'getPeopleInSelectionDay']);
 Route::post('/addPersonToSelectionDay/{selectionDay}', [PersonSelectionDayController::class, 'addPersonToSelectionDay']);
+
+//Rutas Person_Requirement_StatusRequirement
+
+Route::resource('/personRequirements', PersonRequirementStatusRequirementController::class);
 
 
 
