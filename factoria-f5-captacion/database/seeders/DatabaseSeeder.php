@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Comment;
+use App\Models\Requirement;
+use App\Models\SelectionDay;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +23,11 @@ class DatabaseSeeder extends Seeder
             Person_SelectionDaySeeder::class,
             SelectionDaySeeder::class,   
         ]);
+
+        \App\Models\Comment::factory(3)->create();
+        \App\Models\Requirement::factory(3)->create();
+        \App\Models\SelectionDay::factory(3)->create();
+
+
     }
 }
