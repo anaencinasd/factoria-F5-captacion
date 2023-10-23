@@ -26,10 +26,13 @@ class RequirementSeeder extends Seeder
         ]);
 
         Requirement::create([
-            'name'=>'Ejercicios'
+            'name'=>'Jornada de selección'
         ]);
         Requirement::create([
             'name'=>'Segundo formulario'
+        ]);
+        Requirement::create([
+            'name'=>'Ejercicios'
         ]);
     }
 }

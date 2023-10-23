@@ -19,7 +19,7 @@ class PersonSelectionDayRequest extends FormRequest
             'comments' => 'nullable|string', 
             'turn' => 'nullable|string', 
             'school' => 'nullable|string', 
-            'decission' => 'nullable|string', 
+           
         ];
     }
 }
