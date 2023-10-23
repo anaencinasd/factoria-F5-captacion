@@ -32,7 +32,7 @@ Route::resource('/statusRequirement', StatusRequirementController::class);
 //Rutas SelectionDay_person
 
 Route::get('/getPeopleInSelectionDay/{selectionDay}/people', [PersonSelectionDayController::class, 'getPeopleInSelectionDay']);
-Route::post('/addPersonToSelectionDay/{selectionDay}', [PersonSelectionDayController::class, 'addPersonToSelectionDay']);
+Route::post('/addPersonToSelectionDay/{selectionDay}/{person}', [PersonSelectionDayController::class, 'addPersonToSelectionDay']);
 
 //Rutas Person_Requirement_StatusRequirement
 

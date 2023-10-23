@@ -8,19 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class PersonSelectionDayController extends Controller
 {
-    // public function getPeopleInSelectionDay($selectionDayId)
-    // {
-        
-    //     $response = Http::get("http://127.0.0.1:8002/api/person-in-selection-day/{$selectionDayId}");
-
-    //     if ($response->successful()) {
-    //         $people = $response->json();
-
-    //         return response()->json(['data' => $people], 200);
-    //     } else {
-    //         return response()->json(['error' => 'Error al obtener las personas participantes'], 500);
-    //     }
-    // }
+   
 
     public function getPeopleInSelectionDay($selectionDay)
 {
@@ -32,10 +20,12 @@ class PersonSelectionDayController extends Controller
     }
 }
 
-    public function addPersonToSelectionDay(Request $request, $personId)
+    public function addPersonToSelectionDay(Request $request, $selectionDay, $person)
     
     {
-        $idSelectionDay = $request->input('id_selection_day');
+
+        $idSelectionDay = $selectionDay;
+        $personId = $person;
         $response = Http::get("http://127.0.0.1:8002/api/person/{$personId}");
     
         if ($response->successful()) {

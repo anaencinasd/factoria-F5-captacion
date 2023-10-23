@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('person__selection_days', function (Blueprint $table) {
             $table->bigInteger('id_person');
             $table->bigInteger('id_selection_day');
-            $table->string('school');
-            $table->text('comments');
-            $table->string('turn');
-            $table->string('decission');
+            $table->string('school')->default("Sin asignar")->nullable();
+            $table->text('comments')->default("No hay comentarios")->nullable();
+            $table->string('turn')->default("Mañana")->nullable();
+            $table->string('decission')->default("En el proceso")->nullable();
             $table->timestamps();
         });
     }
