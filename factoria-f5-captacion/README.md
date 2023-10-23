@@ -118,3 +118,8 @@ Use the following command to start the Laravel development server:
 php artisan serve —- port=8001
 ```
 The backend will be accessible at http://localhost:8001.
+
+## Developers
+
+| [<img src="https://avatars.githubusercontent.com/u/67557714?v=4" width=115><br><sub>Yolanda Zahonero Alfaro</sub>](https://github.com/yzadeveloper) | [<img src="https://avatars.githubusercontent.com/u/132447141?v=4" width=115><br><sub>Soledad Grobas</sub>](https://github.com/SoleGrobas) | [<img src="https://avatars.githubusercontent.com/u/132446921?v=4" width=115><br><sub>Ana Encinas</sub>](https://github.com/anaencinasd) | [<img src="https://avatars.githubusercontent.com/AmaiaAbaroa" width=115><br><sub>Amaia Abaroa</sub>](https://github.com/AmaiaAbaroa) | [<img src="https://avatars.githubusercontent.com/u/132386229?v=4" width=115><br><sub>Liliana Gutiérrez Fernández</sub>](https://github.com/LilinaG) 
+| :---: | :---: | :---: | :---: | :---: |
